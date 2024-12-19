@@ -16,11 +16,10 @@ app = Flask(__name__)
 # Configuration
 DOWNLOAD_FOLDER = './downloads'
 OUTPUT_FOLDER = './output'
-PROJECT_ID = 'capston-test-436509'
-SUBSCRIPTION_ID = 'projects/capston-test-436509/subscriptions/flask'
-subscription_path = 'projects/capston-test-436509/subscriptions/flask'
-NOTIFICATION_TOPIC = 'demucs-download'  # Notification topic
-FILE_DOWNLOAD_ENDPOINT = '/download'  # Replace with actual IP or hostname
+PROJECT_ID = os.environ['PROJECT_ID']
+subscription_path = os.environ['SUBSCRIPTION_PATH']
+NOTIFICATION_TOPIC = os.environ['NOTIFICATION_TOPIC']
+FILE_DOWNLOAD_ENDPOINT = '/download'
 
 # Ensure directories exist
 if not os.path.exists(DOWNLOAD_FOLDER):
